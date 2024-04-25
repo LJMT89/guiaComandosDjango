@@ -310,9 +310,8 @@
 
                     <li>
                         <div class="row">
-                            <div class="col-lg-3 col-xs-7"><p id="sudoAptInstall">sudo apt install python3-dev
-                                virtualenv
-                                libpq-dev postgresql postgresql-contrib nginx curl</p>
+                            <div class="col-lg-3 col-xs-7">
+                                <p id="sudoAptInstall">sudo apt install python3-dev virtualenv libpq-dev postgresql postgresql-contrib nginx curl</p>
                             </div>
                             <button onclick="func_save_require('sudoAptInstall')">Copiar</button>
                         </div>
@@ -337,36 +336,31 @@
                         </div>
                         <br>
                         <div class="row">
-                            <div class="col-lg-3 col-xs-7"><p id="createUser">CREATE USER myprojectuser WITH PASSWORD
-                                'password';</p>
+                            <div class="col-lg-3 col-xs-7"><p id="createUser">CREATE USER myprojectuser WITH PASSWORD 'password';</p>
                             </div>
                             <button onclick="func_save_require('createUser')">Copiar</button>
                         </div>
                         <br>
                         <div class="row">
-                            <div class="col-lg-3 col-xs-7"><p id="alterRole1">ALTER ROLE myprojectuser SET
-                                client_encoding TO 'utf8';</p>
+                            <div class="col-lg-3 col-xs-7"><p id="alterRole1">ALTER ROLE myprojectuser SET client_encoding TO 'utf8';</p>
                             </div>
                             <button onclick="func_save_require('alterRole1')">Copiar</button>
                         </div>
                         <br>
                         <div class="row">
-                            <div class="col-lg-3 col-xs-7"><p id="alterRole2">ALTER ROLE myprojectuser SET
-                                default_transaction_isolation TO 'read committed';</p>
+                            <div class="col-lg-3 col-xs-7"><p id="alterRole2">ALTER ROLE myprojectuser SET default_transaction_isolation TO 'read committed';</p>
                             </div>
                             <button onclick="func_save_require('alterRole2')">Copiar</button>
                         </div>
                         <br>
                         <div class="row">
-                            <div class="col-lg-3 col-xs-7"><p id="alterRole3">ALTER ROLE myprojectuser SET timezone TO
-                                'America/New_York';</p>
+                            <div class="col-lg-3 col-xs-7"><p id="alterRole3">ALTER ROLE myprojectuser SET timezone TO 'America/New_York';</p>
                             </div>
                             <button onclick="func_save_require('alterRole3')">Copiar</button>
                         </div>
                         <br>
                         <div class="row">
-                            <div class="col-lg-3 col-xs-7"><p id="grantDb">GRANT ALL PRIVILEGES ON DATABASE myproject TO
-                                myprojectuser;</p>
+                            <div class="col-lg-3 col-xs-7"><p id="grantDb">GRANT ALL PRIVILEGES ON DATABASE myproject TO myprojectuser;</p>
                             </div>
                             <button onclick="func_save_require('grantDb')">Copiar</button>
                         </div>
@@ -399,8 +393,7 @@
 
                         <br>
                         <div class="row">
-                            <div class="col-lg-3 col-xs-7"><p id="userAdd">sudo useradd --system --gid webpamela
-                                --shell /bin/bash -m pamela</p>
+                            <div class="col-lg-3 col-xs-7"><p id="userAdd">sudo useradd --system --gid webpamela --shell /bin/bash -m pamela</p>
                             </div>
                             <button onclick="func_save_require('userAdd')">Copiar</button>
                         </div>
@@ -416,8 +409,7 @@
 
                         <p> Create /logs and /backups folders on project directory.</p>
                         <div class="row">
-                            <div class="col-lg-3 col-xs-7"><p id="createLogs">sudo cd /home/pamela/ && sudo mkdir logs
-                                backups</p>
+                            <div class="col-lg-3 col-xs-7"><p id="createLogs">sudo cd /home/pamela/ && sudo mkdir logs backups</p>
                             </div>
                             <button onclick="func_save_require('createLogs')">Copiar</button>
                         </div>
@@ -427,8 +419,7 @@
                             owner, that allows user(s) belonging to "webxxxx" group, to access and modify parts of the
                             application which are group-writable:</p>
                         <div class="row">
-                            <div class="col-lg-3 col-xs-7"><p id="changeOwner">sudo chown -R pamela:webpamela
-                                /home/pamela/</p>
+                            <div class="col-lg-3 col-xs-7"><p id="changeOwner">sudo chown -R pamela:webpamela /home/pamela/</p>
                             </div>
                             <button onclick="func_save_require('changeOwner')">Copiar</button>
                         </div>
@@ -452,8 +443,7 @@
 
                         <p>Generate ssh keys for each application user</p>
                         <div class="row">
-                            <div class="col-lg-3 col-xs-7"><p id="sshKeygen">ssh-keygen -t rsa -C
-                                "your-email-address"</p>
+                            <div class="col-lg-3 col-xs-7"><p id="sshKeygen">ssh-keygen -t rsa -C "your-email-address"</p>
                             </div>
                             <button onclick="func_save_require('sshKeygen')">Copiar</button>
                         </div>
@@ -471,8 +461,7 @@
                         <p>Go to your repository -> Clone. Now you can see the SSH url for your repository. Copy it.
                             Finally, clone the repository (Clone a specific branch):</p>
                         <div class="row">
-                            <div class="col-lg-3 col-xs-7"><p id="cloneRepo">git clone --branch [branch_name]
-                                [repository_ssh_url] [server_folder]</p>
+                            <div class="col-lg-3 col-xs-7"><p id="cloneRepo">git clone --branch [branch_name] [repository_ssh_url] [server_folder]</p>
                             </div>
                             <button onclick="func_save_require('cloneRepo')">Copiar</button>
                         </div>
@@ -481,15 +470,13 @@
                         <p>Now, Change the owner and group permissions of files and directories over all the DJANGO
                             PROJECT (Files and directories REMEMBER NOT TO APPLY ON VIRTUALENV!!):</p>
                         <div class="row">
-                            <div class="col-lg-3 col-xs-7"><p id="findFiles">sudo find [app_folder] -type f -exec chmod
-                                664 {} \; </p>
+                            <div class="col-lg-3 col-xs-7"><p id="findFiles">sudo find [app_folder] -type f -exec chmod 664 {} \; </p>
                             </div>
                             <button onclick="func_save_require('findFiles')">Copiar</button>
                         </div>
                         <br>
                         <div class="row">
-                            <div class="col-lg-3 col-xs-7"><p id="findDirs">sudo find [app_folder] -type d -exec chmod
-                                775 {} \; </p>
+                            <div class="col-lg-3 col-xs-7"><p id="findDirs">sudo find [app_folder] -type d -exec chmod 775 {} \; </p>
                             </div>
                             <button onclick="func_save_require('findDirs')">Copiar</button>
                         </div>
@@ -500,8 +487,7 @@
 
                     <li><p>Create and activate virtual Python environments in each application directory (eg.):</p>
                         <div class="row">
-                            <div class="col-lg-3 col-xs-7"><p id="createVenv">virtualenv -p /usr/bin/python3.10
-                                pamela-venv</p>
+                            <div class="col-lg-3 col-xs-7"><p id="createVenv">virtualenv -p /usr/bin/python3.10 pamela-venv</p>
                             </div>
                             <button onclick="func_save_require('createVenv')">Copiar</button>
                         </div>
