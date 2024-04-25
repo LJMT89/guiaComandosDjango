@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Gentelella Alela! | </title>
+
+    <!-- FAVICONS ICON -->
+    <link rel="icon" href="../../images/favicon.webp" type="image/x-icon"/>
+    <!-- Bootstrap core CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../fonts/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../css/animate.min.css" rel="stylesheet">
+
+    <!-- Documentation extras -->
+    <link href="../../css/docs.min.css" rel="stylesheet">
+    <script src="../../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../js/shCore.js"></script>
+    <script type="text/javascript" src="../../js/shBrushXml.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../css/shCoreDefault.css"/>
+    <script type="text/javascript">
+        SyntaxHighlighter.all();
+    </script>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        body {
+            color: #73879C;
+            background: #F7F7F7;
+        }
+    </style>
+    <style>
+        /* Estilo para los textos */
+        .texto-para-copiar {
+            color: black; /* Color de texto por defecto */
+            cursor: pointer; /* Cambia el cursor a mano */
+        }
+
+        /* Estilo para los textos cuando el mouse está encima */
+        .texto-para-copiar:hover {
+            color: blue; /* Cambia el color del texto en hover */
+        }
+    </style>
+</head>
+
+
+<body data-twttr-rendered="true" cz-shortcut-listen="true" id="inicio">
+<a class="sr-only sr-only-focusable" href="http://getbootstrap.com/css/#content">Skip to main content</a>
+
+<!-- Docs master nav -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#inicio">
+                <img style="max-width:100px; margin-top: -9px;" src="../../images/logo1.webp" alt="...">
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="../base.html">Inicio <span class="sr-only">(current)</span></a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Server Configuration <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#initial-setup"><strong>Step 1: Initial server setup</strong></a></li>
+                        <li><a href="#server-config"><strong>Step 2: Server configuration</strong></a></li>
+                        <li><a href="#postgres-setup">Step 2.1: ProstgreSQL setup </a></li>
+                        <li><a href="#gunicorn-setup">Step 2.2: Gunicorn setup </a></li>
+                        <li><a href="#supervisor-setup">Step 2.3: Supervisor setup </a></li>
+                        <li><a href="#nginx-setup">Step 2.4: Nginx setup </a></li>
+                        <li><a href="#ssl-setup"><strong>Step 3: SSL with Let's Encrypt</strong></a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Templates <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../pages/gunicorn_config.html">Gunicorn bash</a></li>
+                        <li><a href="../pages/supervisor_config.html">Supervisor config file</a></li>
+                        <li><a href="../pages/nginx_config.html">Nginx config file</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Buscar">
+                </div>
+                <button type="submit" class="btn btn-default">Buscar</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+
+<div class="container body" style="margin-top:50px">
+
+    <div class="col-md-12 thumbnail" style="margin-top:30px; margin-bottom: 50px; padding:5px;">
+        <img src="../../images/logo-01.png" style="width:100%;"/>
+    </div>
+
+
+    <div class="col-md-12">
+
+        <div id="gunicorn-template">
+            <!-- sample code for header -->
+            <div class="highlight">
+                <h1>Gunicorn bash template</h1>
+                <button onclick="getText()">Copiar</button>
+                <pre class="prettyprint lines brush: xml" id="codeSnippet">
+                    <!DOCTYPE html>
+                    <html lang="es">
+                        <body>
+                            #!/bin/bash
+
+                            NAME="dvine_app"                                          # Name of the application
+                            DJANGODIR=/home/dvine/repo/dvine                          # Django project directory
+                            VIRTUALENVDIR=/home/dvine/dvine-venv                      # Virtualenv project directory
+                            SOCKFILE=/home/dvine/run/gunicorn.sock                    # we will communicate using this uni>
+                            USER=dvine                                                # the user to run as
+                            GROUP=webdvine                                            # the group to run as
+                            NUM_WORKERS=3                                              # how many worker processes should >
+                            DJANGO_SETTINGS_MODULE=dvine.settings.production          # which settings file should Django >
+                            DJANGO_WSGI_MODULE=dvine.wsgi                             # WSGI module name
+                            TIMEOUT=120
+
+                            echo "Starting $NAME as `whoami`"
+
+                            # Activate the virtual environment
+                            cd $VIRTUALENVDIR
+                            source bin/activate
+                            cd $DJANGODIR
+                            export DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE
+                            export PYTHONPATH=$DJANGODIR:$PYTHONPATH
+
+                            # Create the run directory if it doesn't exist
+                            RUNDIR=$(dirname $SOCKFILE)
+                            test -d $RUNDIR || mkdir -p $RUNDIR
+
+                            # Start your Django Unicorn
+                            # Programs meant to be run under supervisor should not daemonize themselves (do not use --daem>
+                            cd $VIRTUALENVDIR
+                            exec bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
+                              --name $NAME \
+                              --workers $NUM_WORKERS \
+                              --timeout $TIMEOUT \
+                              --user=$USER --group=$GROUP \
+                              --bind=unix:$SOCKFILE \
+                              --log-level=debug \
+                              --log-file=-
+                        </body>
+                    </html>
+                </pre>
+            </div>
+            <!-- /sample code header -->
+        </div>
+
+    </div>
+</div>
+
+
+<!-- footer content -->
+<footer>
+    <center>
+        <div class="footer-bottom">
+            <div class="auto-container">
+                <div class="inner-container clearfix">
+                    <div class="copyright-text">
+                        <p class="company-about fadeIn">&copy;
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script>
+                            Desarrollado por
+                            <a href="https://www.ideafix.com.co/">ideafix - Soluciones de Ingeniería</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </center>
+</footer>
+<!-- /footer content -->
+
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../../js/jquery.min.js"></script>
+
+
+<script src="../../js/bootstrap.min.js"></script>
+
+<script>
+    function getText() {
+        // Get the code snippet element by its ID
+        var codeSnippet = document.getElementById("codeSnippet");
+
+        // Get the text content of the code snippet
+        var textToCopy = codeSnippet.textContent;
+
+        // Log the text content to console (for demonstration)
+        //console.log(textToCopy);
+
+        // You can use the textToCopy variable in further processing, such as copying to clipboard
+        navigator.clipboard.writeText(textToCopy);
+    }
+</script>
+
+</body>
+
+</html>

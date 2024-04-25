@@ -71,14 +71,14 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#inicio">
-                <img style="max-width:100px; margin-top: -9px;" src="images/logo1.webp" alt="...">
+                <img style="max-width:100px; margin-top: -9px;" src="../../images/logo1.webp" alt="...">
             </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="#inicio">Inicio <span class="sr-only">(current)</span></a></li>
+                <li><a href="../base.html">Inicio <span class="sr-only">(current)</span></a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                        aria-expanded="false">Server Configuration <span class="caret"></span></a>
@@ -96,9 +96,9 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                        aria-expanded="false">Templates <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#gunicorn-template">Gunicorn bash</a></li>
-                        <li><a href="#supervisor-template">Supervisor config file</a></li>
-                        <li><a href="#nginx-template">Nginx config file</a></li>
+                        <li><a href="../pages/gunicorn_config.html">Gunicorn bash</a></li>
+                        <li><a href="../pages/supervisor_config.html">Supervisor config file</a></li>
+                        <li><a href="../pages/nginx_config.html">Nginx config file</a></li>
                     </ul>
                 </li>
             </ul>
@@ -128,6 +128,7 @@
         <div class="col-md-12">
 
             <div id="initial-setup">
+                <br><br>
                 <div class="box">
                     <h1>Step 1: Initial Server Setup with Ubuntu 22.04</h1>
                 </div>
@@ -318,7 +319,9 @@
                         <br>
                     </li>
 
-                    <h3 id="postgres-setup" class="mb-3 pb-3">Step 2.1: ProstgreSQL setup</h3> <br>
+                    <div id="postgres-setup"></div>
+                    <br><br>
+                    <h3 class="mb-3 pb-3">Step 2.1: ProstgreSQL setup</h3> <br>
 
                     <li>
                         <div class="row">
@@ -455,37 +458,251 @@
                             <button onclick="func_save_require('sshKeygen')">Copiar</button>
                         </div>
                         <br>
+
+                        <p>Log into Bitbucket -> View repository -> Access keys -> Add key Paste the key you have
+                            generated. To get the key, run the following command:</p>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="catSsh">cat ~/.ssh/id_rsa.pub</p>
+                            </div>
+                            <button onclick="func_save_require('catSsh')">Copiar</button>
+                        </div>
+                        <br>
+
+                        <p>Go to your repository -> Clone. Now you can see the SSH url for your repository. Copy it.
+                            Finally, clone the repository (Clone a specific branch):</p>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="cloneRepo">git clone --branch [branch_name]
+                                [repository_ssh_url] [server_folder]</p>
+                            </div>
+                            <button onclick="func_save_require('cloneRepo')">Copiar</button>
+                        </div>
+                        <br>
+
+                        <p>Now, Change the owner and group permissions of files and directories over all the DJANGO
+                            PROJECT (Files and directories REMEMBER NOT TO APPLY ON VIRTUALENV!!):</p>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="findFiles">sudo find [app_folder] -type f -exec chmod
+                                664 {} \; </p>
+                            </div>
+                            <button onclick="func_save_require('findFiles')">Copiar</button>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="findDirs">sudo find [app_folder] -type d -exec chmod
+                                775 {} \; </p>
+                            </div>
+                            <button onclick="func_save_require('findDirs')">Copiar</button>
+                        </div>
+                        <br>
+                        <p><strong>Note: </strong>DON'T FORGET TO ADD THIS ON APP.SETTINGS!: <br>FILE_UPLOAD_PERMISSIONS
+                            = 0o644</p>
                     </li>
 
-                    <h3 id="gunicorn-setup" class="mb-3 pb-3">Step 2.2: Gunicorn setup</h3> <br>
-
-                    <li>
+                    <li><p>Create and activate virtual Python environments in each application directory (eg.):</p>
                         <div class="row">
-                            <div class="col-lg-3 col-xs-7"><p id="xxxx">xxxxxxxxxxxx</p>
+                            <div class="col-lg-3 col-xs-7"><p id="createVenv">virtualenv -p /usr/bin/python3.10
+                                pamela-venv</p>
                             </div>
-                            <button onclick="func_save_require('xxxx')">Copiar</button>
+                            <button onclick="func_save_require('createVenv')">Copiar</button>
+                        </div>
+                        <br>
+
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="sourceVenv">source
+                                /home/pamela/pamela-venv/bin/activate</p>
+                            </div>
+                            <button onclick="func_save_require('sourceVenv')">Copiar</button>
                         </div>
                         <br>
                     </li>
 
-                    <h3 id="supervisor-setup" class="mb-3 pb-3">Step 2.3: Supervisor setup</h3> <br>
+                    <li><p>Install requirements, check, run migrations, populate cities database, collectstatic and
+                        createsuperuser</p>
+                        <br>
+                    </li>
 
-                    <li>
+                    <li><p>Create an exception for port 8000 and you can test your project by starting up the Django
+                        development server (as VPS sudo user):</p>
                         <div class="row">
-                            <div class="col-lg-3 col-xs-7"><p id="xxxx">xxxxxxxxxxxx</p>
+                            <div class="col-lg-3 col-xs-7"><p id="sudoUfwAllow">sudo ufw allow 8000</p>
                             </div>
-                            <button onclick="func_save_require('xxxx')">Copiar</button>
+                            <button onclick="func_save_require('sudoUfwAllow')">Copiar</button>
+                        </div>
+                        <br>
+
+                        <p>Then, as project user run:</p>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="projectRun">python manage.py runserver 0:8000</p>
+                            </div>
+                            <button onclick="func_save_require('projectRun')">Copiar</button>
+                        </div>
+                        <br>
+
+                        <p>In web browser, you should see the project</p>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="projectRunLocal">http://server_domain_or_IP:8000</p>
+                            </div>
+                            <button onclick="func_save_require('projectRunLocal')">Copiar</button>
                         </div>
                         <br>
                     </li>
 
-                    <h3 id="nginx-setup" class="mb-3 pb-3">Step 2.4: Nginx setup</h3> <br>
+                    <div id="gunicorn-setup"></div>
+                    <br><br>
+                    <h3 class="mb-3 pb-3">Step 2.4: Gunicorn setup</h3> <br>
 
-                    <li>
+                    <li><p><strong>"Test Gunicorn’s Ability to Serve the Project"</strong></p><br>
+                        <p>As project USER (e.g. pamela):</p>
                         <div class="row">
-                            <div class="col-lg-3 col-xs-7"><p id="xxxx">xxxxxxxxxxxx</p>
+                            <div class="col-lg-3 col-xs-7"><p id="pipGunicorn">pip install gunicorn</p>
                             </div>
-                            <button onclick="func_save_require('xxxx')">Copiar</button>
+                            <button onclick="func_save_require('pipGunicorn')">Copiar</button>
+                        </div>
+                        <br>
+
+                        <p>Within project root (cd ~/myprojectdir):</p>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="runProjectGunicorn">gunicorn --bind 0.0.0.0:8000
+                                myproject.wsgi</p>
+                            </div>
+                            <button onclick="func_save_require('runProjectGunicorn')">Copiar</button>
+                        </div>
+                        <br>
+                    </li>
+
+                    <li><p>Gunicorn is installed and ready to serve your app. Let’s set some configuration options to
+                        make it more useful. I like to set a number of parameters, so let’s put them all into a small
+                        BASH script, which I save as bin/gunicorn_start. (CREATE bin/gunicorn_start.bash file for each
+                        app). <strong>NOTE: WITHIN VIRTUALENV.</strong></p>
+                        <br>
+                        <p>So, update and save <strong>gunicorn_start.bash template</strong></p>
+                        <br>
+
+                        <p>Now, set the executable bit on the gunicorn_start script:</p>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="chmodBash">chmod u+x gunicorn_start.bash</p>
+                            </div>
+                            <button onclick="func_save_require('chmodBash')">Copiar</button>
+                        </div>
+                        <br>
+
+                        <p>Test your gunicorn_start script by running it:</p>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="testBash">./gunicorn_start.bash</p>
+                            </div>
+                            <button onclick="func_save_require('testBash')">Copiar</button>
+                        </div>
+                        <br>
+                    </li>
+
+                    <div id="supervisor-setup"></div>
+                    <br><br>
+                    <h3 class="mb-3 pb-3">Step 2.3: Supervisor setup</h3> <br>
+
+                    <li><p>Install Supervisor (as VPS sudo user)</p>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="sudoInstalSuperv">sudo apt install supervisor</p>
+                            </div>
+                            <button onclick="func_save_require('sudoInstalSuperv')">Copiar</button>
+                        </div>
+                        <br>
+                    </li>
+
+                    <li><p>Create Supervisor config file (as VPS sudo user)</p>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="sudoNanoSupervisor">sudo nano
+                                /etc/supervisor/conf.d/app_name.conf</p>
+                            </div>
+                            <button onclick="func_save_require('sudoNanoSupervisor')">Copiar</button>
+                        </div>
+                        <br>
+                        <p>So, update and save <strong>supervisor.conf template</strong></p>
+                        <br>
+                    </li>
+
+                    <li><p>Reread the configuration files and update Supervisor to start the app:</p>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="supervReread">sudo supervisorctl reread</p>
+                            </div>
+                            <button onclick="func_save_require('supervReread')">Copiar</button>
+                        </div>
+                        <br>
+
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="supervUpdate">sudo supervisorctl update</p>
+                            </div>
+                            <button onclick="func_save_require('supervUpdate')">Copiar</button>
+                        </div>
+                        <br>
+
+                        <p>You can also start them manually, if you prefer:</p>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="supervUpdate">sudo supervisorctl start
+                                "project_app"</p>
+                            </div>
+                            <button onclick="func_save_require('supervUpdate')">Copiar</button>
+                        </div>
+                        <br>
+                        <p><strong>Note:</strong>Your application should now be automatically started after a system
+                            reboot and automatically restarted if it ever crashed for some reason.</p>
+                    </li>
+
+
+                    <div id="nginx-setup"></div>
+                    <br><br>
+                    <h3 class="mb-3 pb-3">Step 2.5: Nginx setup</h3> <br>
+
+                    <li><p>Start nginx:</p>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="sudoStartNginx">sudo service nginx start</p>
+                            </div>
+                            <button onclick="func_save_require('sudoStartNginx')">Copiar</button>
+                        </div>
+                        <br>
+                    </li>
+
+                    <li><p>Create nginx block server in /etc/nginx/sites-available/ folder and enable:</p>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="nanoNginxFile">sudo nano
+                                /etc/nginx/sites-available/[app_name]</p>
+                            </div>
+                            <button onclick="func_save_require('nanoNginxFile')">Copiar</button>
+                        </div>
+                        <br>
+                        <p>So, update and save <strong>Nginx configuration template</strong></p>
+                        <br>
+                    </li>
+
+                    <li><p>Now, create nginx symbolic file:</p>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="symbolicNginx">sudo ln -s
+                                /etc/nginx/sites-available/[app_name] /etc/nginx/sites-enabled/[app_name]</p>
+                            </div>
+                            <button onclick="func_save_require('symbolicNginx')">Copiar</button>
+                        </div>
+                        <br>
+
+                        <p>Text nginx file:</p>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="nginxTest">sudo nginx -t</p>
+                            </div>
+                            <button onclick="func_save_require('nginxTest')">Copiar</button>
+                        </div>
+                        <br>
+
+                        <p>Restart nginx:</p>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="nginxRestart">sudo service nginx restart</p>
+                            </div>
+                            <button onclick="func_save_require('nginxRestart')">Copiar</button>
+                        </div>
+                        <br>
+
+                        <p>UFW allow Nginx full:</p>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="nginxUFWFull">sudo ufw allow 'Nginx Full'</p>
+                            </div>
+                            <button onclick="func_save_require('nginxUFWFull')">Copiar</button>
                         </div>
                         <br>
                     </li>
@@ -502,14 +719,11 @@
                 </div>
 
                 <ol type="a">
-                    <li>xxxxxxxxxxx:
+                    <li>Run the tutorial presented by Digital ocean here:
+                        <a target="_blank"
+                           href="https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-22-04">Let's
+                            Encrypt tutorial</a>
                         <br><br>
-                        <div class="row">
-                            <div class="col-lg-3 col-xs-7"><p id="xxxx">xxxxxxxxxx</p>
-                            </div>
-                            <button onclick="func_save_require('xxxx')">Copiar</button>
-                        </div>
-                        <br>
                     </li>
                 </ol>
             </div>
@@ -544,10 +758,10 @@
 <!-- Bootstrap core JavaScript
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="js/jquery.min.js"></script>
+<script src="../../js/jquery.min.js"></script>
 
 
-<script src="js/bootstrap.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
 
 <script>
     function func_save_require(object) {
