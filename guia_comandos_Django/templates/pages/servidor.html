@@ -11,7 +11,7 @@
     <title>Gentelella Alela! | </title>
 
     <!-- FAVICONS ICON -->
-	<link rel="icon" href="../../images/favicon.webp" type="image/x-icon" />
+    <link rel="icon" href="../../images/favicon.webp" type="image/x-icon"/>
     <!-- Bootstrap core CSS -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
     <link href="../../fonts/css/font-awesome.min.css" rel="stylesheet">
@@ -22,7 +22,7 @@
     <script src="../../js/jquery.min.js"></script>
     <script type="text/javascript" src="../../js/shCore.js"></script>
     <script type="text/javascript" src="../../js/shBrushXml.js"></script>
-    <link type="text/css" rel="stylesheet" href="../../css/shCoreDefault.css" />
+    <link type="text/css" rel="stylesheet" href="../../css/shCoreDefault.css"/>
     <script type="text/javascript">
         SyntaxHighlighter.all();
     </script>
@@ -30,9 +30,9 @@
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
     <style>
         body {
@@ -56,187 +56,506 @@
 
 
 <body data-twttr-rendered="true" cz-shortcut-listen="true" id="inicio">
-    <a class="sr-only sr-only-focusable" href="http://getbootstrap.com/css/#content">Skip to main content</a>
+<a class="sr-only sr-only-focusable" href="http://getbootstrap.com/css/#content">Skip to main content</a>
 
-    <!-- Docs master nav -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+<!-- Docs master nav -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                     data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#inicio">
-                    <img style="max-width:100px; margin-top: -9px;" src="../../images/logo1.webp" alt="...">
-                </a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="../base.html">Inicio <span class="sr-only">(current)</span></a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                            aria-expanded="false">Comandos Django <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#crear-entorno-virtual">Entorno virtual</a></li>
-                            <li><a href="#instalar-django">Instalación</a></li>
-                            <li><a href="#crear-proyecto-django">Crear proyecto</a></li>
-                            <li><a href="#crear-aplicacion-django">Crear aplicación</a></li>
-                            <li><a href="#migraciones">Migraciones</a></li>
-                            <li><a href="#crear-superuser">Crear superusuario</a></li>
-                            <li><a href="#lanzar-servidor">Lanzar servidor</a></li>
-                            <li><a href="#requirements">Requirements</a></li>
-                            <li><a href="#matar-procesos-puerto">Matar proceso</a></li>
-                            <li><a href="#subir-cambios-servidor">Subir cambios al servidor</a></li>
-                            <li><a href="#subir-cambios-servidor-git">Subir cambios al servidor desde GIT</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                            aria-expanded="false">Snippets Django <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#concatenate-date">Concatenar tag DATE</a></li>
-                            <li><a href="#instalar-ckeditor">Instalar ckeditor</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                            aria-expanded="false">Snippets HTML <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#boton-whatsapp">Botón de whatsapp</a></li>
-                            <li><a href="#recorrer-datatable">Recorrer Datatable</a></li>
-                            <li><a href="#instalar-ytdefer">Instalar lib. youtube</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="pages/servidor.html">Servidor</a></li>
-                </ul>
-                <form class="navbar-form navbar-left" role="search">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Buscar">
-                    </div>
-                    <button type="submit" class="btn btn-default">Buscar</button>
-                </form>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
-
-    <div class="container body" style="margin-top:50px">
-
-        <div class="col-md-12 thumbnail" style="margin-top:30px; margin-bottom: 50px; padding:5px;">
-            <img src="../../images/logo-01.png" style="width:100%;" />
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#inicio">
+                <img style="max-width:100px; margin-top: -9px;" src="images/logo1.webp" alt="...">
+            </a>
         </div>
 
-        <div class="row">
-            <div class="col-md-12">
-
-                <div id="comandos-django">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="#inicio">Inicio <span class="sr-only">(current)</span></a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Server Configuration <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#initial-setup"><strong>Step 1: Initial server setup</strong></a></li>
+                        <li><a href="#server-config"><strong>Step 2: Server configuration</strong></a></li>
+                        <li><a href="#postgres-setup">Step 2.1: ProstgreSQL setup </a></li>
+                        <li><a href="#gunicorn-setup">Step 2.2: Gunicorn setup </a></li>
+                        <li><a href="#supervisor-setup">Step 2.3: Supervisor setup </a></li>
+                        <li><a href="#nginx-setup">Step 2.4: Nginx setup </a></li>
+                        <li><a href="#ssl-setup"><strong>Step 3: SSL with Let's Encrypt</strong></a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Templates <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#gunicorn-template">Gunicorn bash</a></li>
+                        <li><a href="#supervisor-template">Supervisor config file</a></li>
+                        <li><a href="#nginx-template">Nginx config file</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Buscar">
                 </div>
-
-                <br>
-                <hr>
-
-                <div id="concatenate-date">
-                </div>
-
-                <br>
-                <hr>
-
-                <div id="instalar-ckeditor">
-                </div>
-
-                <br>
-                <hr>
-
-                <div id="boton-whatsapp">
-                </div>
-                
-                <br>
-                <hr>
+                <button type="submit" class="btn btn-default">Buscar</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
 
 
-                <div id="recorrer-datatable">
-                </div>
+<div class="container body" style="margin-top:50px">
 
-                <br>
-                <hr>
-
-                <div id="instalar-ytdefer">
-                </div>
-
-                <br>
-                <hr>
-
-            </div>
-
-        </div>
-
+    <div class="col-md-12 thumbnail" style="margin-top:30px; margin-bottom: 50px; padding:5px;">
+        <img src="../../images/logo-01.png" style="width:100%;"/>
     </div>
 
-    <!-- footer content -->
-    <footer>
-        <center>
-            <div class="footer-bottom">
-                <div class="auto-container">
-                    <div class="inner-container clearfix">
-                        <div class="copyright-text">
-                            <p class="company-about fadeIn">&copy;
-                                <script>
-                                    document.write(new Date().getFullYear())
-                                </script>
-                                Desarrollado por
-                                <a href="https://www.ideafix.com.co/">ideafix - Soluciones de Ingeniería</a>
-                            </p>
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div id="initial-setup">
+                <div class="box">
+                    <h1>Step 1: Initial Server Setup with Ubuntu 22.04</h1>
+                </div>
+
+                <ol type="a">
+                    <h3 class="mb-3 pb-3">Logging in as root</h3>
+
+                    <p><strong>Note:</strong> From <a
+                            href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu#step-1-logging-in-as-root">Digitalocean
+                        docs</a>
+                    </p>
+                    <br>
+
+                    <li>Log in as the root user using the following command. Substitute the highlighted your_server_ip
+                        portion of the command with your server’s public IP address:
+                        <br><br>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="idSshRoot">ssh root@your_server_ip</p>
+                            </div>
+                            <button onclick="func_save_require('idSshRoot')">Copiar</button>
                         </div>
+                        <br>
+                    </li>
+
+                    <li>Once you log in as root, you’ll be able to add the new user account. In the future, we’ll log in
+                        with this new account instead of root. This example creates a new user called sammy, but you
+                        should replace that with a username that you like:
+                        <br><br>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="idAddUser">adduser sammy</p>
+                            </div>
+                            <button onclick="func_save_require('idAddUser')">Copiar</button>
+                        </div>
+                        <br>
+                    </li>
+
+                    <li>Add admin privileges to your new user, you will need to add the user to the sudo system
+                        group. By default on Ubuntu, users who are members of the sudo group are allowed to use the sudo
+                        command. <br>
+                        As root, run this command to add your new user to the sudo group (substitute the highlighted
+                        sammy username with your new user)::
+                        <br><br>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="usermodAdd">usermod -aG sudo sammy</p>
+                            </div>
+                            <button onclick="func_save_require('usermodAdd')">Copiar</button>
+                        </div>
+                        <br>
+                    </li>
+
+                    <h3>Setting up a firewall</h3> <br>
+
+                    <li>Ubuntu servers can use the UFW firewall to ensure only connections to certain services are
+                        allowed. You can set up a basic firewall using this application.
+                        <br>
+                        Applications can register their profiles with UFW upon installation. These profiles allow UFW to
+                        manage these applications by name. OpenSSH, the service that allows you to connect to your
+                        server, has a profile registered with UFW:
+                        <br><br>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="idUfwList">ufw app list</p>
+                            </div>
+                            <button onclick="func_save_require('idUfwList')">Copiar</button>
+                        </div>
+                        <br>
+                    </li>
+
+                    <li>You will need to make sure that the firewall allows SSH connections so that you can log into
+                        your server next time. Allow these connections by typing:
+                        <br><br>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="ufwAllow">ufw allow OpenSSH</p>
+                            </div>
+                            <button onclick="func_save_require('ufwAllow')">Copiar</button>
+                        </div>
+                        <br>
+                    </li>
+
+                    <li>Now enable the firewall by typing:
+                        <br><br>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="ufwEnable">ufw enable</p>
+                            </div>
+                            <button onclick="func_save_require('ufwEnable')">Copiar</button>
+                        </div>
+                        <br>
+                    </li>
+
+                    <li>Type y and press ENTER to proceed. You can see that SSH connections are still allowed by typing:
+                        <br><br>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="ufwStatus">ufw status</p>
+                            </div>
+                            <button onclick="func_save_require('ufwStatus')">Copiar</button>
+                        </div>
+                        <br><br>
+                        <p>The firewall is currently blocking all connections except for SSH. If you install and
+                            configure additional services, you will need to adjust the firewall settings to allow the
+                            new traffic into your server. You can learn some common UFW operations in our
+                            <a href="https://www.digitalocean.com/community/tutorials/ufw-essentials-common-firewall-rules-and-commands"
+                               target="_blank"><u>UFW Essentials guide.</u>
+                            </a>
+                        </p>
+                        <br>
+                    </li>
+
+                    <h3>Enabling External Access for Your Regular User</h3> <br>
+
+                    <li>If you logged in to your root account using SSH keys, then password authentication is disabled
+                        for SSH. To log in as your regular user with an SSH key, you must add a copy of your local
+                        public key to your new user’s ~/.ssh/authorized_keys file.Since your public key is already in
+                        the root account’s ~/.ssh/authorized_keys file on the
+                        server, you can copy that file and directory structure to your new user account using your
+                        current session. <br><br>
+
+                        The simplest way to copy the files with the correct ownership and permissions is with the rsync
+                        command. This command will copy the root user’s .ssh directory, preserve the permissions, and
+                        modify the file owners, all in a single command. Make sure to change the highlighted portions of
+                        the command below to match your regular user’s name:
+                        <br><br>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="rsyncUser">rsync --archive --chown=sammy:sammy
+                                ~/.ssh/home/sammy</p>
+                            </div>
+                            <button onclick="func_save_require('rsyncUser')">Copiar</button>
+                        </div>
+                        <br>
+                    </li>
+
+                    <li>Now, open up a new terminal session on your local machine, and use SSH with your new username:
+                        <br><br>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="sshSammy">ssh sammy@your_server_ip</p>
+                            </div>
+                            <button onclick="func_save_require('sshSammy')">Copiar</button>
+                        </div>
+                        <br>
+                    </li>
+
+                    <li>You should be connected to your server with the new user account without using a password.
+                        Remember, if you need to run a command with administrative privileges, type sudo before the
+                        command like this:
+                        <br><br>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="sudoWelcome">sudo nano Welcome</p>
+                            </div>
+                            <button onclick="func_save_require('sudoWelcome')">Copiar</button>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="sudoRmWelcome">sudo rm -r Welcome</p>
+                            </div>
+                            <button onclick="func_save_require('sudoRMWelcome')">Copiar</button>
+                        </div>
+                        <br>
+                        <p>You will be prompted for your regular user’s password when using sudo for the first time each
+                            session (and periodically afterward).</p>
+                    </li>
+
+
+                </ol>
+            </div>
+
+            <div id="server-config">
+                <br><br>
+                <div class="box">
+                    <h1>Step 2: Server configuration</h1>
+                </div>
+
+                <ol type="a">
+                    <li>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="sudoApt">sudo apt update</p>
+                            </div>
+                            <button onclick="func_save_require('sudoApt')">Copiar</button>
+                        </div>
+                        <br>
+                    </li>
+
+                    <li>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="sudoAptInstall">sudo apt install python3-dev
+                                virtualenv
+                                libpq-dev postgresql postgresql-contrib nginx curl</p>
+                            </div>
+                            <button onclick="func_save_require('sudoAptInstall')">Copiar</button>
+                        </div>
+                        <br>
+                    </li>
+
+                    <h3 id="postgres-setup" class="mb-3 pb-3">Step 2.1: ProstgreSQL setup</h3> <br>
+
+                    <li>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="sudoUPost">sudo -u postgres psql</p>
+                            </div>
+                            <button onclick="func_save_require('sudoUPost')">Copiar</button>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="createDb">CREATE DATABASE myproject;</p>
+                            </div>
+                            <button onclick="func_save_require('createDb')">Copiar</button>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="createUser">CREATE USER myprojectuser WITH PASSWORD
+                                'password';</p>
+                            </div>
+                            <button onclick="func_save_require('createUser')">Copiar</button>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="alterRole1">ALTER ROLE myprojectuser SET
+                                client_encoding TO 'utf8';</p>
+                            </div>
+                            <button onclick="func_save_require('alterRole1')">Copiar</button>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="alterRole2">ALTER ROLE myprojectuser SET
+                                default_transaction_isolation TO 'read committed';</p>
+                            </div>
+                            <button onclick="func_save_require('alterRole2')">Copiar</button>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="alterRole3">ALTER ROLE myprojectuser SET timezone TO
+                                'America/New_York';</p>
+                            </div>
+                            <button onclick="func_save_require('alterRole3')">Copiar</button>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="grantDb">GRANT ALL PRIVILEGES ON DATABASE myproject TO
+                                myprojectuser;</p>
+                            </div>
+                            <button onclick="func_save_require('grantDb')">Copiar</button>
+                        </div>
+                        <br>
+                        <p>Exit psql</p>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="exitDb">\q</p>
+                            </div>
+                            <button onclick="func_save_require('exitDb')">Copiar</button>
+                        </div>
+                        <br>
+                    </li>
+
+                    <h3 id="users-setup" class="mb-3 pb-3">Step 2.2: Create users</h3> <br>
+
+                    <li>Even though Django has a pretty good security track record, web applications can become
+                        compromised. In order to make running multiple applications safer we’ll create a separate system
+                        user account for each application. The apps will run on our system with the privileges of those
+                        special users. Even if one application became compromised, an attacker would only be able to
+                        take over the part of your system available to the hacked application.
+                        <br><br>
+                        Create system users named for each application and assign them to a system group for each
+                        application,too (replace pamela for your user name):
+                        <br>br
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="groupAdd">sudo groupadd --system webpamela</p>
+                            </div>
+                            <button onclick="func_save_require('groupAdd')">Copiar</button>
+                        </div>
+
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="userAdd">sudo useradd --system --gid webpamela
+                                --shell /bin/bash -m pamela</p>
+                            </div>
+                            <button onclick="func_save_require('userAdd')">Copiar</button>
+                        </div>
+                        <br>
+
+                        <p>Note: Add VPS regular user to web app groups </p>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="userSammyAdd">sudo adduser sammy webpamela</p>
+                            </div>
+                            <button onclick="func_save_require('userSammyAdd')">Copiar</button>
+                        </div>
+                        <br>
+
+                        <p> Create /logs and /backups folders on project directory.</p>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="createLogs">sudo cd /home/pamela/ && sudo mkdir logs
+                                backups</p>
+                            </div>
+                            <button onclick="func_save_require('createLogs')">Copiar</button>
+                        </div>
+                        <br>
+
+                        <p> Change the owner of files in each application’s folder and Assign the group "webxxxx" as the
+                            owner, that allows user(s) belonging to "webxxxx" group, to access and modify parts of the
+                            application which are group-writable:</p>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="changeOwner">sudo chown -R pamela:webpamela
+                                /home/pamela/</p>
+                            </div>
+                            <button onclick="func_save_require('changeOwner')">Copiar</button>
+                        </div>
+                        <br>
+                    </li>
+
+                    <h3 id="user-environment" class="mb-3 pb-3">Step 2.3: User project environment</h3> <br>
+
+                    <li> FROM NOW ON USE THE APPLICATION USERS!... From
+                        <a target="_blank"
+                           href="https://stackoverflow.com/questions/58622854/cloning-a-bitbucket-repository-via-ssh">
+                            Cloning a Bitbucket repository via ssh
+                        </a>
+                        <br><br>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="sudoPamelaIn">sudo su - pamela</p>
+                            </div>
+                            <button onclick="func_save_require('sudoPamelaIn')">Copiar</button>
+                        </div>
+                        <br>
+
+                        <p>Generate ssh keys for each application user</p>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="sshKeygen">ssh-keygen -t rsa -C
+                                "your-email-address"</p>
+                            </div>
+                            <button onclick="func_save_require('sshKeygen')">Copiar</button>
+                        </div>
+                        <br>
+                    </li>
+
+                    <h3 id="gunicorn-setup" class="mb-3 pb-3">Step 2.2: Gunicorn setup</h3> <br>
+
+                    <li>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="xxxx">xxxxxxxxxxxx</p>
+                            </div>
+                            <button onclick="func_save_require('xxxx')">Copiar</button>
+                        </div>
+                        <br>
+                    </li>
+
+                    <h3 id="supervisor-setup" class="mb-3 pb-3">Step 2.3: Supervisor setup</h3> <br>
+
+                    <li>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="xxxx">xxxxxxxxxxxx</p>
+                            </div>
+                            <button onclick="func_save_require('xxxx')">Copiar</button>
+                        </div>
+                        <br>
+                    </li>
+
+                    <h3 id="nginx-setup" class="mb-3 pb-3">Step 2.4: Nginx setup</h3> <br>
+
+                    <li>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="xxxx">xxxxxxxxxxxx</p>
+                            </div>
+                            <button onclick="func_save_require('xxxx')">Copiar</button>
+                        </div>
+                        <br>
+                    </li>
+
+
+                </ol>
+            </div>
+
+
+            <div id="ssl-setup">
+                <br><br>
+                <div class="box">
+                    <h1>Step 3: SSL with Let's Encrypt</h1>
+                </div>
+
+                <ol type="a">
+                    <li>xxxxxxxxxxx:
+                        <br><br>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="xxxx">xxxxxxxxxx</p>
+                            </div>
+                            <button onclick="func_save_require('xxxx')">Copiar</button>
+                        </div>
+                        <br>
+                    </li>
+                </ol>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- footer content -->
+<footer>
+    <center>
+        <div class="footer-bottom">
+            <div class="auto-container">
+                <div class="inner-container clearfix">
+                    <div class="copyright-text">
+                        <p class="company-about fadeIn">&copy;
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script>
+                            Desarrollado por
+                            <a href="https://www.ideafix.com.co/">ideafix - Soluciones de Ingeniería</a>
+                        </p>
                     </div>
                 </div>
             </div>
-        </center>
-    </footer>
-    <!-- /footer content -->
+        </div>
+    </center>
+</footer>
+<!-- /footer content -->
 
-    <!-- Bootstrap core JavaScript
-        ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../../js/jquery.min.js"></script>
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/jquery.min.js"></script>
 
-    <script src="../../js/bootstrap.min.js"></script>
 
-    <script>
-        // Función para copiar el texto al portapapeles
-        function copiarTextoAlPortapapeles(texto) {
-            // Crea un elemento de textarea temporal para copiar el texto
-            var textarea = document.createElement("textarea");
-            textarea.value = texto;
-            document.body.appendChild(textarea);
+<script src="js/bootstrap.min.js"></script>
 
-            // Selecciona y copia el texto
-            textarea.select();
-            document.execCommand("copy");
-
-            // Elimina el textarea temporal
-            document.body.removeChild(textarea);
-        }
-
-        // Obtiene todos los elementos <p> con la clase "texto-para-copiar"
-        var textosParaCopiar = document.querySelectorAll(".texto-para-copiar");
-
-        // Itera sobre todos los elementos para agregar el evento de clic
-        textosParaCopiar.forEach(function(textoParaCopiarElemento) {
-            textoParaCopiarElemento.addEventListener("click", function() {
-                // Copia el texto al portapapeles cuando se hace clic en el elemento <p>
-                copiarTextoAlPortapapeles(textoParaCopiarElemento.innerText);
-            });
-        });
-    </script>
+<script>
+    function func_save_require(object) {
+        var p = document.getElementById("" + object);
+        var copyText = p.textContent;
+        navigator.clipboard.writeText(copyText);
+    }
+</script>
 
 </body>
 
