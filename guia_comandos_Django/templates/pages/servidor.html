@@ -250,8 +250,7 @@
                         the command below to match your regular user’s name:
                         <br><br>
                         <div class="row">
-                            <div class="col-lg-3 col-xs-7"><p id="rsyncUser">rsync --archive --chown=sammy:sammy
-                                ~/.ssh/home/sammy</p>
+                            <div class="col-lg-3 col-xs-7"><p id="rsyncUser">rsync --archive --chown=sammy:sammy ~/.ssh/home/sammy</p>
                             </div>
                             <button onclick="func_save_require('rsyncUser')">Copiar</button>
                         </div>
@@ -494,8 +493,7 @@
                         <br>
 
                         <div class="row">
-                            <div class="col-lg-3 col-xs-7"><p id="sourceVenv">source
-                                /home/pamela/pamela-venv/bin/activate</p>
+                            <div class="col-lg-3 col-xs-7"><p id="sourceVenv">source /home/pamela/pamela-venv/bin/activate</p>
                             </div>
                             <button onclick="func_save_require('sourceVenv')">Copiar</button>
                         </div>
@@ -548,8 +546,7 @@
 
                         <p>Within project root (cd ~/myprojectdir):</p>
                         <div class="row">
-                            <div class="col-lg-3 col-xs-7"><p id="runProjectGunicorn">gunicorn --bind 0.0.0.0:8000
-                                myproject.wsgi</p>
+                            <div class="col-lg-3 col-xs-7"><p id="runProjectGunicorn">gunicorn --bind 0.0.0.0:8000 myproject.wsgi</p>
                             </div>
                             <button onclick="func_save_require('runProjectGunicorn')">Copiar</button>
                         </div>
@@ -596,8 +593,7 @@
 
                     <li><p>Create Supervisor config file (as VPS sudo user)</p>
                         <div class="row">
-                            <div class="col-lg-3 col-xs-7"><p id="sudoNanoSupervisor">sudo nano
-                                /etc/supervisor/conf.d/app_name.conf</p>
+                            <div class="col-lg-3 col-xs-7"><p id="sudoNanoSupervisor">sudo nano /etc/supervisor/conf.d/app_name.conf</p>
                             </div>
                             <button onclick="func_save_require('sudoNanoSupervisor')">Copiar</button>
                         </div>
@@ -623,8 +619,7 @@
 
                         <p>You can also start them manually, if you prefer:</p>
                         <div class="row">
-                            <div class="col-lg-3 col-xs-7"><p id="supervUpdate">sudo supervisorctl start
-                                "project_app"</p>
+                            <div class="col-lg-3 col-xs-7"><p id="supervUpdate">sudo supervisorctl start "project_app"</p>
                             </div>
                             <button onclick="func_save_require('supervUpdate')">Copiar</button>
                         </div>
@@ -649,8 +644,7 @@
 
                     <li><p>Create nginx block server in /etc/nginx/sites-available/ folder and enable:</p>
                         <div class="row">
-                            <div class="col-lg-3 col-xs-7"><p id="nanoNginxFile">sudo nano
-                                /etc/nginx/sites-available/[app_name]</p>
+                            <div class="col-lg-3 col-xs-7"><p id="nanoNginxFile">sudo nano /etc/nginx/sites-available/[app_name]</p>
                             </div>
                             <button onclick="func_save_require('nanoNginxFile')">Copiar</button>
                         </div>
@@ -661,8 +655,7 @@
 
                     <li><p>Now, create nginx symbolic file:</p>
                         <div class="row">
-                            <div class="col-lg-3 col-xs-7"><p id="symbolicNginx">sudo ln -s
-                                /etc/nginx/sites-available/[app_name] /etc/nginx/sites-enabled/[app_name]</p>
+                            <div class="col-lg-3 col-xs-7"><p id="symbolicNginx">sudo ln -s /etc/nginx/sites-available/[app_name] /etc/nginx/sites-enabled/[app_name]</p>
                             </div>
                             <button onclick="func_save_require('symbolicNginx')">Copiar</button>
                         </div>
