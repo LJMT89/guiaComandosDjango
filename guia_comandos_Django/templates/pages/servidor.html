@@ -551,6 +551,22 @@
                             <button onclick="func_save_require('runProjectGunicorn')">Copiar</button>
                         </div>
                         <br>
+
+                        <p>Do not forget to delete the previous UFW rule (As VPS user):</p>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="ufwDelete8000">sudo ufw delete allow 8000</p>
+                            </div>
+                            <button onclick="func_save_require('ufwDelete8000')">Copiar</button>
+                        </div>
+                        <br>
+
+                        <p>Verify UFW status (As VPS user):</p>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="ufwStatusVerify">sudo ufw status</p>
+                            </div>
+                            <button onclick="func_save_require('ufwStatusVerify')">Copiar</button>
+                        </div>
+                        <br>
                     </li>
 
                     <li><p>Gunicorn is installed and ready to serve your app. Let’s set some configuration options to
@@ -619,9 +635,9 @@
 
                         <p>You can also start them manually, if you prefer:</p>
                         <div class="row">
-                            <div class="col-lg-3 col-xs-7"><p id="supervUpdate">sudo supervisorctl start "project_app"</p>
+                            <div class="col-lg-3 col-xs-7"><p id="supervStartApp">sudo supervisorctl start "project_app"</p>
                             </div>
-                            <button onclick="func_save_require('supervUpdate')">Copiar</button>
+                            <button onclick="func_save_require('supervStartApp')">Copiar</button>
                         </div>
                         <br>
                         <p><strong>Note:</strong>Your application should now be automatically started after a system
@@ -666,6 +682,26 @@
                             <div class="col-lg-3 col-xs-7"><p id="nginxTest">sudo nginx -t</p>
                             </div>
                             <button onclick="func_save_require('nginxTest')">Copiar</button>
+                        </div>
+                        <br>
+
+                        <p>One more step, add Nginx user to project user group (replace "webpamela" for user group):</p>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="nginxWwwData">sudo adduser www-data webpamela</p>
+                            </div>
+                            <button onclick="func_save_require('nginxWwwData')">Copiar</button>
+                        </div>
+                        <br>
+
+
+                    </li>
+
+                    <li>
+                        <p>Restart supervisor application user:</p>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="supervisorRestartApp">sudo supervisorctl restart app_name</p>
+                            </div>
+                            <button onclick="func_save_require('supervisorRestartApp')">Copiar</button>
                         </div>
                         <br>
 
