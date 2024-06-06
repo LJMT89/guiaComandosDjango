@@ -133,10 +133,10 @@
                     <html lang="es">
                         <body id="myBody">
                            [program:dvine]
-                            command = /home/dvine/dvine-venv/bin/gunicorn_start.bash       ; Command to start app
-                            user = dvine                                                 ; User to run as
-                            stdout_logfile = /home/dvine/logs/gunicorn_supervisor.log    ; Where to write log messages
-                            redirect_stderr = true                                        ; Save stderr in the same log
+                           command = /home/dvine/dvine-venv/bin/gunicorn_start.bash     ; Command to start app
+                           user = dvine                                                 ; User to run as
+                           stdout_logfile = /home/dvine/logs/gunicorn_supervisor.log    ; Where to write log messages
+                           redirect_stderr = true                                       ; Save stderr in the same log
                         </body>
                     </html>
                 </pre>
