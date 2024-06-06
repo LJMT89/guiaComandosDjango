@@ -508,8 +508,67 @@
                         <br>
                     </li>
 
+                    <li><p>Edit .env settings file:</p>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="nanoEnvFile">nano .env</p>
+                            </div>
+                            <button onclick="func_save_require('nanoEnvFile')">Copiar</button>
+                        </div>
+                        <br>
+
+                        <p>Generate secret key for django project:</p>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="generateSecretKey">python -c 'import secrets; print(secrets.token_hex(50))'</p>
+                            </div>
+                            <button onclick="func_save_require('generateSecretKey')">Copiar</button>
+                        </div>
+                        <br>
+                    </li>
+
                     <li><p>Install requirements, check, run migrations, populate cities database, collectstatic and
-                        createsuperuser</p>
+                        createsuperuser:</p>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="pipInstallRequi">pip install -r requirements.txt</p>
+                            </div>
+                            <button onclick="func_save_require('pipInstallRequi')">Copiar</button>
+                        </div>
+                        <br>
+
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="pythonCheck">python manage.py check</p>
+                            </div>
+                            <button onclick="func_save_require('pythonCheck')">Copiar</button>
+                        </div>
+                        <br>
+
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="pythonMakeMigrations">python manage.py makemigrations</p>
+                            </div>
+                            <button onclick="func_save_require('pythonMakeMigrations')">Copiar</button>
+                        </div>
+                        <br>
+
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="pythonMigrate">python manage.py migrate</p>
+                            </div>
+                            <button onclick="func_save_require('pythonMigrate')">Copiar</button>
+                        </div>
+                        <br>
+
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="pythonCollectStatic">python manage.py collectstatic</p>
+                            </div>
+                            <button onclick="func_save_require('pythonCollectStatic')">Copiar</button>
+                        </div>
+                        <br>
+
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="pythonCreateSuperUser">python manage.py createsuperuser</p>
+                            </div>
+                            <button onclick="func_save_require('pythonCreateSuperUser')">Copiar</button>
+                        </div>
                         <br>
                     </li>
 
