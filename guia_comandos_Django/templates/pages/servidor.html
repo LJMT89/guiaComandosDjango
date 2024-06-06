@@ -250,7 +250,7 @@
                         the command below to match your regular user’s name:
                         <br><br>
                         <div class="row">
-                            <div class="col-lg-3 col-xs-7"><p id="rsyncUser">rsync --archive --chown=sammy:sammy ~/.ssh/home/sammy</p>
+                            <div class="col-lg-3 col-xs-7"><p id="rsyncUser">rsync --archive --chown=sammy:sammy ~/.ssh /home/sammy</p>
                             </div>
                             <button onclick="func_save_require('rsyncUser')">Copiar</button>
                         </div>
@@ -406,9 +406,17 @@
                         </div>
                         <br>
 
+                        <p>Verify VPS user correct groups added. Note: Exit and authenticate again to VPS.</p>
+                        <div class="row">
+                            <div class="col-lg-3 col-xs-7"><p id="vpsUserGroups">groups</p>
+                            </div>
+                            <button onclick="func_save_require('vpsUserGroups')">Copiar</button>
+                        </div>
+                        <br>
+
                         <p> Create /logs and /backups folders on project directory.</p>
                         <div class="row">
-                            <div class="col-lg-3 col-xs-7"><p id="createLogs">sudo cd /home/pamela/ && sudo mkdir logs backups</p>
+                            <div class="col-lg-3 col-xs-7"><p id="createLogs">cd /home/pamela/ && sudo mkdir logs backups</p>
                             </div>
                             <button onclick="func_save_require('createLogs')">Copiar</button>
                         </div>
